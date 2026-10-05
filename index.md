@@ -9,8 +9,6 @@ Go to <a href="https://blogtrottr.com" target="_blank" rel="noopener">blogtrottr
 
 <br>
 
-<hr>
-
 {% for post in site.posts limit:40 %}
 <article>
   <h2><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
