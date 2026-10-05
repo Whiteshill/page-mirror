@@ -7,6 +7,8 @@ layout: default
 <p><strong>Want an email when there's a new post?</strong>
 Go to <a href="https://blogtrottr.com" target="_blank" rel="noopener">blogtrottr.com</a>, paste in this feed address, <code>{{ '/feed.xml' | absolute_url }}</code>, add your email address and choose how often you'd like updates. It's free, and you can unsubscribe at any time.</p>
 
+<br>
+
 <hr>
 
 {% for post in site.posts limit:40 %}
