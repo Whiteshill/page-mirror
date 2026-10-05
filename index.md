@@ -5,7 +5,7 @@ layout: default
 <p>This page automatically mirrors the last 5 posts from the Whiteshill and Ruscombe Community Facebook page. Posts appear here shortly after they are published on Facebook.</p>
 
 <p><strong>Want an email when there's a new post?</strong>
-Go to <a href="https://blogtrottr.com">blogtrottr.com</a>, paste in this feed address, <code>{{ '/feed.xml' | absolute_url }}</code>, add your email address and choose how often you'd like updates. It's free, and you can unsubscribe at any time.</p>
+Go to <a href="https://blogtrottr.com" target="_blank" rel="noopener">blogtrottr.com</a>, paste in this feed address, <code>{{ '/feed.xml' | absolute_url }}</code>, add your email address and choose how often you'd like updates. It's free, and you can unsubscribe at any time.</p>
 
 <br>
 
