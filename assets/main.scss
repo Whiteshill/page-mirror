@@ -1,0 +1,29 @@
+---
+---
+
+@import "minima";
+
+article img {
+  float: right;
+  clear: right;
+  width: 35%;
+  max-width: 300px;
+  height: auto;
+  margin: 0 0 1em 1.5em;
+}
+
+article::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+@media (max-width: 600px) {
+  article img {
+    float: none;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 1em 0;
+  }
+}
