@@ -35,3 +35,51 @@ article {
 .site-header {
   padding-top: 2em;
 }
+
+[data-theme="dark"] body {
+  background-color: #1c1c1e;
+  color: #e6e6e6;
+}
+
+[data-theme="dark"] a { color: #7db3ff; }
+[data-theme="dark"] a:visited { color: #b9a6ff; }
+[data-theme="dark"] a:hover { color: #ffffff; }
+
+[data-theme="dark"] .site-header {
+  border-top-color: #444;
+  border-bottom-color: #444;
+}
+
+[data-theme="dark"] .site-title,
+[data-theme="dark"] .site-title:visited,
+[data-theme="dark"] .site-nav .page-link {
+  color: #e6e6e6;
+}
+
+[data-theme="dark"] .site-nav {
+  background-color: #1c1c1e;
+  border-color: #444;
+}
+
+[data-theme="dark"] small,
+[data-theme="dark"] .post-meta,
+[data-theme="dark"] .site-footer {
+  color: #aaa;
+}
+
+[data-theme="dark"] hr { border-color: #444; }
+
+.theme-toggle-row {
+  text-align: right;
+  padding-top: 0.5em;
+}
+
+#theme-toggle {
+  background: none;
+  border: 1px solid #828282;
+  border-radius: 4px;
+  padding: 0.25em 0.6em;
+  font-size: 0.85em;
+  cursor: pointer;
+  color: inherit;
+}
