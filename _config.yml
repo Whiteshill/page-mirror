@@ -1,3 +1,5 @@
 title: Whiteshill and Ruscombe Community
 description: An automatic mirror of the Whiteshill and Ruscombe Community Facebook group page
 theme: minima
+plugins:
+  - jekyll-feed
