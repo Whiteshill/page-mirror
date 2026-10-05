@@ -83,3 +83,29 @@ article {
   cursor: pointer;
   color: inherit;
 }
+
+/* Darker blue links in the light theme */
+a { color: #1a4f9c; }
+a:visited { color: #153d7a; }
+a:hover { color: #111; }
+
+/* Code text (such as the feed address) in dark mode */
+[data-theme="dark"] code,
+[data-theme="dark"] pre {
+  background-color: #2c2c2e;
+  border-color: #555;
+  color: #e6e6e6;
+}
+
+/* Title on the left, button on the right */
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+.header-row .site-title {
+  float: none;
+}
