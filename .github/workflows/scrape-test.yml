@@ -1,0 +1,32 @@
+name: Scrape test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install the browser tools
+        run: |
+          pip install playwright
+          playwright install --with-deps chromium
+
+      - name: Run the test
+        run: python scripts/scrape_test.py
+        env:
+          GROUP_URL: ${{ secrets.GROUP_URL }}
+
+      - name: Save the screenshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: page-screenshot
+          path: page-screenshot.png
+          if-no-files-found: ignore
