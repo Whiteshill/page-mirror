@@ -196,12 +196,12 @@ for index, item in enumerate(items):
     when = min(when, now)
 
     body_parts = []
-    if text:
-        body_parts.append(text_to_html(text))
     for number, url in enumerate(images, start=1):
         local = download_image(url, key, number)
         if local:
             body_parts.append(f'<p><img src="{local}" alt=""></p>')
+    if text:
+        body_parts.append(text_to_html(text))
     if has_video(item):
         body_parts.append("<p><em>This post includes a video, which you can watch on Facebook.</em></p>")
     if SHOW_AUTHOR and (item.get("user") or {}).get("name"):
