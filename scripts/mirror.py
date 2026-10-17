@@ -196,6 +196,8 @@ for index, item in enumerate(items):
         continue
     text = (item.get("text") or "").strip()
     images = find_images(item)
+    if item.get("attachments") and not images:
+        print("No image found in attachment types:", [a.get("__typename") for a in item["attachments"] if isinstance(a, dict)])
     if not text and not images:
         continue
 
