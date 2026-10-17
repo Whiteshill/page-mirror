@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<p>This page automatically mirrors the latest posts from the Whiteshill and Ruscombe Community Facebook page. Posts published on Facebook will appear here three times a day at set times, so there will be a delay.</p>
+<p>This page automatically mirrors the latest posts from the Whiteshill and Ruscombe Community Facebook page. Posts published on Facebook will appear here three times a day at set times, so there will usually be som delay.</p>
 
 <p><strong>Want an email when there's a new post?</strong>
 Go to <a href="https://blogtrottr.com" target="_blank" rel="noopener">blogtrottr.com</a>, paste in this feed address, <code>{{ '/feed.xml' | absolute_url }}</code>, add your email address and choose how often you'd like updates. It's free, and you can unsubscribe at any time.</p>
