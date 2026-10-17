@@ -108,19 +108,32 @@ def find_date(item):
     return None
 
 
+def best_image(node):
+    for key in ("photo_image", "image", "viewer_image", "preview_image", "large_share_image"):
+        value = node.get(key)
+        if isinstance(value, dict) and value.get("uri"):
+            return value["uri"]
+    if isinstance(node.get("thumbnail"), str):
+        return node["thumbnail"]
+    return None
+
+
 def find_images(item):
     urls = []
-    for att in item.get("attachments") or []:
-        if not isinstance(att, dict):
-            continue
-        for candidate in (
-            (att.get("photo_image") or {}).get("uri"),
-            (att.get("image") or {}).get("uri"),
-            att.get("thumbnail"),
-        ):
-            if candidate:
-                urls.append(candidate)
-                break
+
+    def walk(node):
+        if isinstance(node, dict):
+            found = best_image(node)
+            if found:
+                urls.append(found)
+                return
+            for value in node.values():
+                walk(value)
+        elif isinstance(node, list):
+            for value in node:
+                walk(value)
+
+    walk(item.get("attachments") or [])
     return list(dict.fromkeys(urls))
 
 
