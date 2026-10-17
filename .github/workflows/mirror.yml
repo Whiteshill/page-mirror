@@ -2,7 +2,7 @@ name: Mirror Facebook page
 
 on:
   schedule:
-    - cron: "23 7 * * *"
+    - cron: "23 8,14,20 * * *"
   workflow_dispatch:
     inputs:
       clear_first:
