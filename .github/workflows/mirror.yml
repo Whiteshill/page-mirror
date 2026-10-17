@@ -2,8 +2,13 @@ name: Mirror Facebook page
 
 on:
   schedule:
-    - cron: "17 * * * *"
+    - cron: "23 7 * * *"
   workflow_dispatch:
+    inputs:
+      clear_first:
+        description: "Delete all existing mirrored posts first (tick for the first run only)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -19,13 +24,12 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install the feed reader
-        run: pip install feedparser
-
-      - name: Create posts from the feed
+      - name: Create posts from the group
         run: python scripts/mirror.py
         env:
-          FEED_URL: ${{ secrets.FEED_URL }}
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+          GROUP_URL: ${{ secrets.GROUP_URL }}
+          CLEAR_FIRST: ${{ inputs.clear_first }}
 
       - name: Save new posts and rebuild the site
         env:
